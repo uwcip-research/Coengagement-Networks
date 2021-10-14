@@ -24,14 +24,14 @@ This Github repository contains code for creating shared engagement projection g
 This software uses Docker to run its code. Docker is a service that allows you to run pre-packaged code in "Docker containers" without having to install additional dependencies outside of the Docker softwar itself. Here is how you can get set up with Docker.
 
 1. Install Docker from Docker's website here: https://www.docker.com/get-started. Follow instructions on that link to get Docker set up properly on your workstation.
-2. Use the command "docker pull <>" to pull the SharedEngagement Docker container from (link)
+2. Use the command `docker pull ghcr.io/uwcip-research/shared-engagement-projection:latest` to pull the SharedEngagement Docker container.
 3. Follow the documentation below to run your Docker container on directed network datasets in CSV and GEXF formats.
 
 ## Full Documentation
 To run this Docker container, enter the following command into the command line of the machine where you pulled your Docker container. Replace the sections in brackets with parameters as described in the documentation below.
 
 ```shell
-docker run -rm -v [INPUT_DIRECTORY]:/input_data [OUTPUT_DIRECTORY]:/output_data [CONTAINER NAME] [INPUT OPTIONS] [OUTPUT OPTIONS] [OTHER OPTIONS]
+docker run -rm -v [INPUT_DIRECTORY]:/input_data [OUTPUT_DIRECTORY]:/output_data shared-engagement-projection [INPUT OPTIONS] [OUTPUT OPTIONS] [OTHER OPTIONS]
 
 ```
 
@@ -84,7 +84,7 @@ You can test out this package with a sample Reddit dataset we have downloaded fr
 5. Identify the path to where you want to output your results. For this case, we'll assume that's `/home/andrew/example_output`.
 6. Following the instructions from the documentation, format your Docker commands as follows:
 
-``docker run --rm -v /home/andrew/data/example_data:/input_data /home/andrew/example_output:/output_data -it testimage --input-data /input_data/soc-redditHyperlinks-body.csv --output-all /output_data/example_case -n 2 -s 2``
+``docker run --rm -v /home/andrew/data/example_data:/input_data /home/andrew/example_output:/output_data -it shared-engagement-projection --input-data /input_data/soc-redditHyperlinks-body.csv --output-all /output_data/example_case -n 2 -s 2``
 
 This would create 4 output files, a GEXF of the network, a PDF containing the network visualization, and two CSVs which together contain the network structure. While there is some randomness to the output, the PDF outputs should similar to this:
 
