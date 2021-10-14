@@ -13,7 +13,7 @@ endif
 
 # get image id based on tag or commit
 IMAGE_VERSION := $(or $(IMAGE_TAG),$(IMAGE_COMMIT))
-IMAGE_NAME := "ghcr.io/uwcip-research/cosharing-generator"
+IMAGE_NAME := "ghcr.io/uwcip-research/shared-engagement-projection"
 IMAGE_ID := "${IMAGE_NAME}:${IMAGE_VERSION}"
 
 all: build
