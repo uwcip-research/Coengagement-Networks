@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Start virtual environment
+. /home/uwcip/venv/bin/activate
+
+# Set up Python path
+export PYTHONPATH=/home/uwcip/app:$PYTHONPATH
+
+# Execute python code using other command line arguments
+exec python3 -m seg_graph "$@"
