@@ -31,7 +31,7 @@ This software uses Docker to run its code. Docker is a service that allows you t
 To run this Docker container, enter the following command into the command line of the machine where you pulled your Docker container. Replace the sections in brackets with parameters as described in the documentation below.
 
 ```shell
-docker run -rm -v [INPUT_DIRECTORY]:/input_data [OUTPUT_DIRECTORY]:/output_data shared-engagement-projection [INPUT OPTIONS] [OUTPUT OPTIONS] [OTHER OPTIONS]
+docker run --rm -v [INPUT_DIRECTORY]:/input_data [OUTPUT_DIRECTORY]:/output_data shared-engagement-projection [INPUT OPTIONS] [OUTPUT OPTIONS] [OTHER OPTIONS]
 
 ```
 
