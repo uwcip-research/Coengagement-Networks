@@ -31,7 +31,7 @@ This software uses Docker to run its code. Docker is a service that allows you t
 To run this Docker container, enter the following command into the command line of the machine where you pulled your Docker container. Replace the sections in brackets with parameters as described in the documentation below.
 
 ```shell
-docker run --rm -v [INPUT_DIRECTORY]:/input_data [OUTPUT_DIRECTORY]:/output_data shared-engagement-projection [INPUT OPTIONS] [OUTPUT OPTIONS] [OTHER OPTIONS]
+docker run --rm -v [INPUT_DIRECTORY]:/input_data [OUTPUT_DIRECTORY]:/output_data ghcr.io/uwcip-research/shared-engagement-projection:latest [INPUT OPTIONS] [OUTPUT OPTIONS] [OTHER OPTIONS]
 
 ```
 
@@ -48,11 +48,11 @@ In the INPUT_OPTIONS section, you must specify one of two sets of parameters. Th
 
 SOURCE and TARGET should correspond to unique identifiers for each node in your dataset. Source nodes direct to target nodes. SOURCE_NAME and TARGET_NAME are optional aliases for SOURCE and TARGET, which if present, will be used as labels in the resulting visualization. After you have specified your CSV file, use the following parameters:
 
-``--input-data [filename] --n [val1] --s [val2]``
+``--input-data [filename] -n [val1] -s [val2]``
 
 --input-data should link to the CSV file you would like to be processed. Note here that because of the way Docker processes files, this filename must be relative to the directory inside the Docker container, which unless you have changed it in the previous parameters, should be "/input_data." So, using the previous example, if your input file is "/home/andrew/data/graph/example.csv" and you mapped the directory "/home/andrew/data/graph," then your --input-data filepath here should be "/input_data/example.csv."
 
-The second two parameters, --n and --s, correspond to parameters that define the type of shared engagement projection that you want to make. Intuitively, you can understand these parameters as such: in the projection, nodes A and B are linked if at least *n* other nodes engage with both of them at least *s* times. An extended discussion of how these two parameters affect output visualizations can be found in our paper. We suggest a starting value of n=2, s=2, which you can modify later to generate different visualizations. If your dataset is very large (>100M nodes), you may want to raise these parameter values to constrict the size of the network.
+The second two parameters, -n and -s, correspond to parameters that define the type of shared engagement projection that you want to make. Intuitively, you can understand these parameters as such: in the projection, nodes A and B are linked if at least *n* other nodes engage with both of them at least *s* times. An extended discussion of how these two parameters affect output visualizations can be found in our paper. We suggest a starting value of n=2, s=2, which you can modify later to generate different visualizations. If your dataset is very large (>100M nodes), you may want to raise these parameter values to constrict the size of the network.
 
 ### OUTPUT OPTIONS
 This code can generate several different forms of output. You can specify as many as you would like with the following parameters.
