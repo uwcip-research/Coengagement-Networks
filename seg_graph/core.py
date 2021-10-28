@@ -9,6 +9,7 @@ from tqdm import tqdm
 from collections import defaultdict
 from itertools import combinations
 from glob import glob
+from csv import reader
 
 
 def set_dict():
@@ -115,51 +116,52 @@ def generate_network_gexf(database_name=None,
 def load_csv_connection_data(input_csv, output_network_file,
                         save_pkl=True, dict_pkl_file=None, users_pkl_file=None,
                         attributes=None, verbose=True):
-
+    if verbose:
+        print("Entering load method")
     connections_dict = defaultdict(dict_dict)
     username_dict = dict()
 
     if verbose:
         print("Reading CSV..")
 
-    items = pd.read_csv(input_csv)
-    
+    with open(input_csv, 'r') as read_obj:
+        csv_reader = reader(read_obj)
+        header = next(csv_reader)
+
+        if header is not None:
+            header = [x.lower() for x in header]
+            if 'source' in header:
+                source_index = header.index('source')
+            else:
+                print('ERROR: NO SOURCE COLUMN')
+                source_index = 0
+            if 'target' in header:
+                target_index = header.index('target')
+            else:
+                print('ERROR: NO TARGET COLUMN')
+                target_index = 1
+            if 'source_label' in header:
+                source_label_index = header.index('source_label')
+            else:
+                source_label_index = source_index
+            if 'target_label' in header:
+                target_label_index = header.index('target_label')
+            else:
+                target_label_index = target_index
+            for row in tqdm(csv_reader):
+                screen_name = row[source_label_index]
+                connect_user_name = row[target_label_index]
+                user_id = row[source_index]
+                connect_user = row[target_index]
+                username_dict[user_id] = screen_name
+                username_dict[connect_user] = connect_user_name
+                if connect_user not in connections_dict[user_id]:
+                    connections_dict[user_id][connect_user] = 0
+                connections_dict[user_id][connect_user] += 1
+
     if verbose:
         print("Finished reading.")
     
-    name_to_id = dict()
-    for index, item in tqdm(items.iterrows()):
-        if 'source_label' in item:
-            screen_name = item['source_label']
-        else:
-            screen_name = item['source']
-
-        if 'target_label' in item:
-            connect_user_name = item['target_label']
-        else:
-            connect_user_name = item['target']
-
-        if 'source' in item and 'target' in item:  # in column names
-            user_id = item['source']
-            connect_user = item['target']
-        else:
-            if screen_name.lower() in name_to_id:
-                user_id = name_to_id[screen_name.lower()]
-            else:
-                user_id = len(name_to_id)
-                name_to_id[screen_name.lower()] = user_id
-
-            if connect_user_name.lower() in name_to_id:
-                connect_user = name_to_id[connect_user_name.lower()]
-            else:
-                connect_user = len(name_to_id)
-                name_to_id[connect_user_name] = connect_user
-
-        username_dict[user_id] = screen_name
-        if connect_user not in connections_dict[user_id]:
-            connections_dict[user_id][connect_user] = 0
-        connections_dict[user_id][connect_user] += 1
-        username_dict[connect_user] = connect_user_name
 
     if verbose:
         print(len(connections_dict), 'connecting users')
