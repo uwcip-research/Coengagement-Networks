@@ -1,8 +1,8 @@
-# Shared Engagement Projections
+# Coengagement Projections
 
-![A sample shared engagement projection](./README_Image.png?raw=true "Shared Engagement Projections")
+![A sample coengagement projection](./README_Image.png?raw=true "Coengagement Projections")
 
-A data visualization Docker container for shared engagement projection networks. Created by Joseph S. Schafer and Andrew Beers of 
+A data visualization Docker container for coengagement projection networks. Created by Joseph S. Schafer and Andrew Beers of 
 the University of Washington Center for an Informed Public.
 ##Table of Contents
 1. [About](#about)
@@ -18,7 +18,7 @@ the University of Washington Center for an Informed Public.
 
 ## About
 
-This Github repository contains code for creating shared engagement projection graphs and visualizations, per the paper "Shared Engagement Projections for the 2020 United States Election: A Network Visualization Case Study and Toolkit." A shared engagement projection is a transformation of a directed network of social media engagements on entitites into an undirected projection of shared engagements between entities. For example, one could take a dataset of accounts retweeting other accounts on Twitter, and create a shared engagement projection where links between accounts denote that they are retweeted by the same intermediate accounts. Intuitively, edges in these projections maps shared audiences of engaged users. Creating these networks can reduce the size and complexity of social network visualizations on extremely large engagement datasets. Please read our paper (currently under review) for additional details and examples.
+This Github repository contains code for creating coengagement projection graphs and visualizations, per the paper "Coengagement Projections for the 2020 United States Election: A Network Visualization Case Study and Toolkit." A coengagement projection is a transformation of a directed network of social media engagements on entitites into an undirected projection of coengagements between entities. For example, one could take a dataset of accounts retweeting other accounts on Twitter, and create a coengagement projection where links between accounts denote that they are retweeted by the same intermediate accounts. Intuitively, edges in these projections maps shared audiences of engaged users. Creating these networks can reduce the size and complexity of social network visualizations on extremely large engagement datasets. Please read our paper (currently under review) for additional details and examples.
 
 ## Installation
 This software uses Docker to run its code. Docker is a service that allows you to run pre-packaged code in "Docker containers" without having to install additional dependencies outside of the Docker softwar itself. Here is how you can get set up with Docker.
@@ -52,7 +52,7 @@ SOURCE and TARGET should correspond to unique identifiers for each node in your 
 
 --input-data should link to the CSV file you would like to be processed. Note here that because of the way Docker processes files, this filename must be relative to the directory inside the Docker container, which unless you have changed it in the previous parameters, should be "/input_data." So, using the previous example, if your input file is "/home/andrew/data/graph/example.csv" and you mapped the directory "/home/andrew/data/graph," then your --input-data filepath here should be "/input_data/example.csv."
 
-The second two parameters, -n and -s, correspond to parameters that define the type of shared engagement projection that you want to make. Intuitively, you can understand these parameters as such: in the projection, nodes A and B are linked if at least *n* other nodes engage with both of them at least *s* times. An extended discussion of how these two parameters affect output visualizations can be found in our paper. We suggest a starting value of n=2, s=2, which you can modify later to generate different visualizations. If your dataset is very large (>100M nodes), you may want to raise these parameter values to constrict the size of the network.
+The second two parameters, -n and -s, correspond to parameters that define the type of coengagement projection that you want to make. Intuitively, you can understand these parameters as such: in the projection, nodes A and B are linked if at least *n* other nodes engage with both of them at least *s* times. An extended discussion of how these two parameters affect output visualizations can be found in our paper. We suggest a starting value of n=2, s=2, which you can modify later to generate different visualizations. If your dataset is very large (>100M nodes), you may want to raise these parameter values to constrict the size of the network.
 
 ### OUTPUT OPTIONS
 This code can generate several different forms of output. You can specify as many as you would like with the following parameters.
@@ -88,7 +88,7 @@ You can test out this package with a sample Reddit dataset we have downloaded fr
 
 This would create 4 output files, a GEXF of the network, a PDF containing the network visualization, and two CSVs which together contain the network structure. While there is some randomness to the output, the PDF outputs should similar to this:
 
-![A sample shared engagement projection of Reddit data.](./tutorial_example.jpg?raw=true "Shared Engagement Projections")
+![A sample coengagement projection of Reddit data.](./tutorial_example.jpg?raw=true "Coengagement Projections")
 
 ## Contact
 For questions about the code, please contact Joseph S. Schafer at [schaferj@uw.edu](mailto:schaferj@uw.edu), or on Twitter [@joey__schafer](https://twitter.com/Joey__Schafer)
