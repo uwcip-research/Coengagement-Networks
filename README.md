@@ -31,7 +31,7 @@ This software uses Docker to run its code. Docker is a service that allows you t
 To run this Docker container, enter the following command into the command line of the machine where you pulled your Docker container. Replace the sections in brackets with parameters as described in the documentation below.
 
 ```shell
-docker run --rm -v [INPUT_DIRECTORY]:/input_data [OUTPUT_DIRECTORY]:/output_data ghcr.io/uwcip-research/shared-engagement-projection:latest [INPUT OPTIONS] [OUTPUT OPTIONS] [OTHER OPTIONS]
+docker run --rm -v [INPUT_DIRECTORY]:/input_data -v [OUTPUT_DIRECTORY]:/output_data ghcr.io/uwcip-research/shared-engagement-projection:latest [INPUT OPTIONS] [OUTPUT OPTIONS] [OTHER OPTIONS]
 
 ```
 
@@ -62,7 +62,7 @@ This code can generate several different forms of output. You can specify as man
 * ``--output-csv [base-filename.csv]`` Outputs two .csv files, one to [base-filename]_nodes.csv and one to [base-filename]_edges.csv, corresponding to the node and edge tables for the projection graph.
 * ``--output-all [base-filename]`` **NOTE:** Not compatible with other outputs. This is a shortcut which outputs all supported output formats. Therefore, this is equivalent to writing ``--output-graph [base-filename.gexf] --output-pdf [base-filename.pdf] --output-csv [base-filename.csv]``. 
 
-Note that as with the inputs, your output filepaths should be relative to the directory mapped inside the Docker container, which if left as default, should be "/input_data." So, if your input file is "/home/andrew/data/graph/example.csv," and you want to create a visualization at "/home/andrew/data/graph/visualization/output_viz.pdf," then the filename that you enter above should be "/input_data/visualization/output_viz.pdf."
+Note that as with the inputs, your output filepaths should be relative to the directory mapped inside the Docker container, which if left as default, should be "/output_data." So, if your input file is "/home/andrew/data/graph/example.csv," and you want to create a visualization at "/home/andrew/data/graph/visualization/output_viz.pdf," then the filename that you enter above should be "/input_data/visualization/output_viz.pdf."
 
 ### OTHER OPTIONS
 ``--err [filename]``: If your input data causes an error, you can view the text of this error optionally at this filepath.
@@ -84,7 +84,7 @@ You can test out this package with a sample Reddit dataset we have downloaded fr
 5. Identify the path to where you want to output your results. For this case, we'll assume that's `/home/andrew/example_output`.
 6. Following the instructions from the documentation, format your Docker commands as follows:
 
-``docker run --rm -v /home/andrew/data/example_data:/input_data /home/andrew/example_output:/output_data -it shared-engagement-projection --input-data /input_data/soc-redditHyperlinks-body.csv --output-all /output_data/example_case -n 2 -s 2``
+``docker run --rm -v /home/andrew/data/example_data:/input_data -v /home/andrew/example_output:/output_data -it ghcr.io/uwcip-research/shared-engagement-projection:latest --input-data /input_data/soc-redditHyperlinks-body.csv --output-all /output_data/example_case -n 2 -s 2``
 
 This would create 4 output files, a GEXF of the network, a PDF containing the network visualization, and two CSVs which together contain the network structure. While there is some randomness to the output, the PDF outputs should similar to this:
 
