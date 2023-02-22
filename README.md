@@ -92,7 +92,21 @@ This would create 4 output files, a GEXF of the network, a PDF containing the ne
 
 ## Contact
 For questions about the code, please contact Joseph S. Schafer at [schaferj@uw.edu](mailto:schaferj@uw.edu), or on Twitter [@joey__schafer](https://twitter.com/Joey__Schafer)
+
 ## Citation
-The publication associated with this code is under review. Please contact albeers@uw.edu or schaferj@uw.edu if you would like to reference this work beforehand.
+The publication associated with this code is accepted at [ICWSM '23](https://www.icwsm.org/2023/index.html/). You can use the following references:
+
+[1] A. Beers, J. S. Schafer, I. Kennedy, M. Wack, E. S. Spiro, and K. Starbird, “Followback Clusters, Satellite Audiences, and Bridge Nodes: Coengagement Networks for the 2020 US Election,” Proceedings of the International AAAI Conference on Web and Social Media, Jun. 2023.
+
+```
+@article{beers_followback_2023,
+	title = {Followback {Clusters}, {Satellite} {Audiences}, and {Bridge} {Nodes}: {Coengagement} {Networks} for the 2020 {US} {Election}},
+	journal = {Proceedings of the International AAAI Conference on Web and Social Media},
+	author = {Beers, Andrew and S. Schafer, Joseph and Kennedy, Ian and Wack, Morgan and S. Spiro, Emma and Starbird, Kate},
+	month = jun,
+	year = {2023},
+}
+```
+
 ## Acknowledgements
 This work is supported by the Center for an Informed Public at the University of Washington, the John S and James L Knight Foundation, Craig Newmark Philanthropies, and the Omidyar Network. We would also like to acknowledge Paul Lockaby of the University of Washington and Clément Levallois from EM Lyon Business School for their valuable advice in completing this project.
