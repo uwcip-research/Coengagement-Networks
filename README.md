@@ -13,12 +13,12 @@ the University of Washington Center for an Informed Public.
    3. [OTHER OPTIONS](#other-options)
 4. [Example Usage](#example-usage)
 5. [Contact](#contact)
-6. [Citation](#citation)
+6. [Citation and Paper Details](#citation)
 7. [Acknowledgements](#acknowledgements)
 
 ## About
 
-This Github repository contains code for creating coengagement projection graphs and visualizations, per the paper "Coengagement Projections for the 2020 United States Election: A Network Visualization Case Study and Toolkit." A coengagement projection is a transformation of a directed network of social media engagements on entitites into an undirected projection of coengagements between entities. For example, one could take a dataset of accounts retweeting other accounts on Twitter, and create a coengagement projection where links between accounts denote that they are retweeted by the same intermediate accounts. Intuitively, edges in these projections maps shared audiences of engaged users. Creating these networks can reduce the size and complexity of social network visualizations on extremely large engagement datasets. Please read our paper (currently under review) for additional details and examples.
+This Github repository contains code for creating coengagement projection graphs and visualizations, per the paper "Followback Clusters, Satellite Audiences, and Bridge Nodes: Coengagement Networks for the 2020 US Election" published at [ICWSM '23](https://www.icwsm.org/2023/index.html/). A coengagement projection is a transformation of a directed network of social media engagements on entitites into an undirected projection of coengagements between entities. For example, one could take a dataset of accounts retweeting other accounts on Twitter, and create a coengagement projection where links between accounts denote that they are retweeted by the same intermediate accounts. Intuitively, edges in these projections maps shared audiences of engaged users. Creating these networks can reduce the size and complexity of social network visualizations on extremely large engagement datasets. Please read our paper, linked here, for additional details.
 
 ## Installation
 This software uses Docker to run its code. Docker is a service that allows you to run pre-packaged code in "Docker containers" without having to install additional dependencies outside of the Docker softwar itself. Here is how you can get set up with Docker.
@@ -93,7 +93,7 @@ This would create 4 output files, a GEXF of the network, a PDF containing the ne
 ## Contact
 For questions about the code, please contact Joseph S. Schafer at [schaferj@uw.edu](mailto:schaferj@uw.edu), or on Twitter [@joey__schafer](https://twitter.com/Joey__Schafer)
 
-## Citation
+## Citation and Paper Details
 The publication associated with this code is accepted at [ICWSM '23](https://www.icwsm.org/2023/index.html/). You can use the following references:
 
 [1] A. Beers, J. S. Schafer, I. Kennedy, M. Wack, E. S. Spiro, and K. Starbird, “Followback Clusters, Satellite Audiences, and Bridge Nodes: Coengagement Networks for the 2020 US Election,” Proceedings of the International AAAI Conference on Web and Social Media, Jun. 2023.
@@ -107,6 +107,8 @@ The publication associated with this code is accepted at [ICWSM '23](https://www
 	year = {2023},
 }
 ```
+
+You can find details and datasets and source code for the original paper detailed here.
 
 ## Acknowledgements
 This work is supported by the Center for an Informed Public at the University of Washington, the John S and James L Knight Foundation, Craig Newmark Philanthropies, and the Omidyar Network. We would also like to acknowledge Paul Lockaby of the University of Washington and Clément Levallois from EM Lyon Business School for their valuable advice in completing this project.
