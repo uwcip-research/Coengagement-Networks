@@ -108,7 +108,18 @@ The publication associated with this code is accepted at [ICWSM '23](https://www
 }
 ```
 
-You can find details and datasets and source code for the original paper detailed here.
+We provide the code used to generate all statistics and figures in "Followback Clusters, Satellite Audiences, and Bridge Nodes: Coengagement Networks for the 2020 US Election" in this repository under the name . Some visualizations are manually created in Gephi and Tableau. For Gephi visualizations, .gexf files are provided, and for the Tableau visualization, tabular data is provided. Figure 2 was created in the vector graphic program Figma.
+
+We publicly host datasets, which can be downloaded either directly or through a utility provided in our code. These include:
+
+*   A .csv data file containing tweet IDs, retweeted status IDs, user IDs, and retweeted user IDs, available here and in source code: https://drive.google.com/file/d/1pIjKj-QNh1VXzEbzRa3C-rvKT1k2DDy3/view?usp=share_link.
+*   Three .gexf network files containing data pertaining to three laid-out network visualizations:
+    *   Case 1: https://drive.google.com/uc?id=1zjOn1EJasK_LyIZCDQprLIwxMoUinsKB 
+    *   Case 2: https://drive.google.com/uc?id=1sEGkzqXVqXuWisaX5OzpQ2etxFPslERB 
+    *   Case 3: https://drive.google.com/uc?id=1LIm10D0DOmhgg7V0ou-v5Yusq7hRqvGe 
+*   A .csv data file containing information about the final follower and following counts for users included in our case studies. https://drive.google.com/uc?id=1HMo8sU5aQJVlmdF-W8G6Oy6gUKYs906n 
+*   A .csv data file containing information about the suspensions status of the users found in these three case studies as of 09/23/21: https://drive.google.com/uc?id=1ZSRKbc7YH7icRzcWtxp2vLI_NG8WXwgv 
+*   A text file containing information about landmark nodes used in Figure 8: https://drive.google.com/uc?id=15zIqCydQpUMGtT9EhylLaXhlWppnOSlp 
 
 ## Acknowledgements
 This work is supported by the Center for an Informed Public at the University of Washington, the John S and James L Knight Foundation, Craig Newmark Philanthropies, and the Omidyar Network. We would also like to acknowledge Paul Lockaby of the University of Washington and Clément Levallois from EM Lyon Business School for their valuable advice in completing this project.
