@@ -1,4 +1,4 @@
-# Coengagement Projections
+# Coengagement Networks
 
 ![A sample coengagement projection](./README_Image.png?raw=true "Coengagement Projections")
 
