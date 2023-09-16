@@ -4,7 +4,8 @@
 
 A data visualization Docker container for coengagement projection networks. Created by Joseph S. Schafer and Andrew Beers of 
 the University of Washington Center for an Informed Public.
-##Table of Contents
+
+## Table of Contents
 1. [About](#about)
 2. [Installation](#installation)
 3. [Full Documentation](#full-documentation)
@@ -13,7 +14,7 @@ the University of Washington Center for an Informed Public.
    3. [OTHER OPTIONS](#other-options)
 4. [Example Usage](#example-usage)
 5. [Contact](#contact)
-6. [Citation and Paper Details](#citation)
+6. [Citation and Paper Details](#citation-and-paper-details)
 7. [Acknowledgements](#acknowledgements)
 
 ## About
