@@ -5,6 +5,8 @@
 A data visualization Docker container for coengagement projection networks. Created by Joseph S. Schafer and Andrew Beers of 
 the University of Washington Center for an Informed Public.
 
+**Important Update 10/09/2023:** We have discovered an error where the "n" and "s" parameters are switched internally in the public-facing, command-line tool for this code. This means that, before this date, if you had created a graph using the command-line tool with input parameters n=10 and s=2, a graph with s=2 and n=10 will be created. This error is only present in the command-line code presented in this repository, and not the code for replication of the publication based on this work. We apologize for the error, and encourage users to contact us with any questions they may have.
+
 ## Table of Contents
 1. [About](#about)
 2. [Installation](#installation)
